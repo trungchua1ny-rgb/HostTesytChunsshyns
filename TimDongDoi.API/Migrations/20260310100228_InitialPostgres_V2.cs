@@ -50,8 +50,8 @@ namespace TimDongDoi.API.Migrations
                     job_title = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: true),
                     salary_expectation = table.Column<int>(type: "integer", nullable: true),
                     cv_file = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: true),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "(getdate())"),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())"),
+                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: false, defaultValueSql: "(now())"),
+                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())"),
                     BannedUntil = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
                     BanReason = table.Column<string>(type: "text", nullable: true)
                 },
@@ -100,7 +100,7 @@ namespace TimDongDoi.API.Migrations
                     size = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
                     founded_year = table.Column<int>(type: "integer", nullable: true),
                     verification_status = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true, defaultValue: "pending"),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())"),
+                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())"),
                     updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
@@ -322,7 +322,7 @@ namespace TimDongDoi.API.Migrations
                     document_url = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: true),
                     status = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true, defaultValue: "pending"),
                     notes = table.Column<string>(type: "text", nullable: true),
-                    submitted_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())"),
+                    submitted_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())"),
                     verified_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
@@ -363,8 +363,8 @@ namespace TimDongDoi.API.Migrations
                     deadline = table.Column<DateOnly>(type: "date", nullable: true),
                     status = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true, defaultValue: "open"),
                     views = table.Column<int>(type: "integer", nullable: true, defaultValue: 0),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())"),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())")
+                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())"),
+                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())")
                 },
                 constraints: table =>
                 {
@@ -439,8 +439,8 @@ namespace TimDongDoi.API.Migrations
                     cv_file = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: true),
                     status = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true, defaultValue: "pending"),
                     reject_reason = table.Column<string>(type: "text", nullable: true),
-                    applied_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())"),
-                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())")
+                    applied_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())"),
+                    updated_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())")
                 },
                 constraints: table =>
                 {
@@ -493,7 +493,7 @@ namespace TimDongDoi.API.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     user_id = table.Column<int>(type: "integer", nullable: false),
                     job_id = table.Column<int>(type: "integer", nullable: false),
-                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(getdate())")
+                    created_at = table.Column<DateTime>(type: "timestamp with time zone", nullable: true, defaultValueSql: "(now())")
                 },
                 constraints: table =>
                 {

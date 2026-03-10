@@ -74,7 +74,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("applied_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<string>("CoverLetter")
                         .HasColumnType("text")
@@ -104,7 +104,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<int>("UserId")
                         .HasColumnType("integer")
@@ -171,7 +171,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<string>("Description")
                         .HasColumnType("text")
@@ -308,7 +308,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("submitted_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<DateTime?>("VerifiedAt")
                         .HasColumnType("timestamp with time zone")
@@ -393,7 +393,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<DateOnly?>("Deadline")
                         .HasColumnType("date")
@@ -466,7 +466,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<int?>("Views")
                         .ValueGeneratedOnAdd()
@@ -1028,7 +1028,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<int>("JobId")
                         .HasColumnType("integer")
@@ -1197,7 +1197,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("created_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.Property<string>("CvFile")
                         .HasMaxLength(255)
@@ -1263,7 +1263,7 @@ namespace TimDongDoi.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(now())");
 
                     b.HasKey("Id")
                         .HasName("PK__users__3213E83FB30C90E4");

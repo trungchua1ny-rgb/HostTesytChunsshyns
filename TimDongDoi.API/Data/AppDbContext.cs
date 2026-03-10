@@ -89,7 +89,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.Address).HasMaxLength(255).HasColumnName("address");
         entity.Property(e => e.Avatar).HasMaxLength(255).HasColumnName("avatar");
         entity.Property(e => e.Birthday).HasColumnName("birthday");
-        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())").HasColumnName("created_at");
+        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(now())").HasColumnName("created_at");
         entity.Property(e => e.CvFile).HasMaxLength(255).HasColumnName("cv_file");
         entity.Property(e => e.Email).HasMaxLength(100).HasColumnName("email");
         entity.Property(e => e.FullName).HasMaxLength(100).HasColumnName("full_name");
@@ -99,7 +99,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.Role).HasMaxLength(20).HasDefaultValue("user").HasColumnName("role");
         entity.Property(e => e.SalaryExpectation).HasColumnName("salary_expectation");
         entity.Property(e => e.Status).HasMaxLength(20).HasDefaultValue("active").HasColumnName("status");
-        entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(getdate())").HasColumnName("updated_at");
+        entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(now())").HasColumnName("updated_at");
     });
 
     // ==================== SKILL ====================
@@ -148,7 +148,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.Size).HasMaxLength(50).HasColumnName("size");
         entity.Property(e => e.FoundedYear).HasColumnName("founded_year");
         entity.Property(e => e.VerificationStatus).HasMaxLength(20).HasDefaultValue("pending").HasColumnName("verification_status");
-        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())").HasColumnName("created_at");
+        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(now())").HasColumnName("created_at");
         entity.Property(e => e.UpdatedAt).HasColumnName("updated_at");
 
         entity.HasOne(d => d.User).WithOne(p => p.Company)
@@ -180,7 +180,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.DocumentUrl).HasMaxLength(255).HasColumnName("document_url");
         entity.Property(e => e.Status).HasMaxLength(20).HasDefaultValue("pending").HasColumnName("status");
         entity.Property(e => e.Notes).HasColumnName("notes");
-        entity.Property(e => e.SubmittedAt).HasDefaultValueSql("(getdate())").HasColumnName("submitted_at");
+        entity.Property(e => e.SubmittedAt).HasDefaultValueSql("(now())").HasColumnName("submitted_at");
         entity.Property(e => e.VerifiedAt).HasColumnName("verified_at");
 
         entity.HasOne(d => d.Company).WithMany(p => p.CompanyVerifications)
@@ -213,8 +213,8 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.Deadline).HasColumnName("deadline");
         entity.Property(e => e.Status).HasMaxLength(20).HasDefaultValue("open").HasColumnName("status");
         entity.Property(e => e.Views).HasDefaultValue(0).HasColumnName("views");
-        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())").HasColumnName("created_at");
-        entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(getdate())").HasColumnName("updated_at");
+        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(now())").HasColumnName("created_at");
+        entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(now())").HasColumnName("updated_at");
 
         entity.HasOne(d => d.Company).WithMany(p => p.Jobs)
             .HasForeignKey(d => d.CompanyId)
@@ -247,7 +247,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.Id).HasColumnName("id");
         entity.Property(e => e.UserId).HasColumnName("user_id");
         entity.Property(e => e.JobId).HasColumnName("job_id");
-        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())").HasColumnName("created_at");
+        entity.Property(e => e.CreatedAt).HasDefaultValueSql("(now())").HasColumnName("created_at");
 
         entity.HasOne(d => d.User).WithMany(p => p.SavedJobs)
             .HasForeignKey(d => d.UserId)
@@ -288,8 +288,8 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         entity.Property(e => e.CvFile).HasMaxLength(255).HasColumnName("cv_file");
         entity.Property(e => e.Status).HasMaxLength(20).HasDefaultValue("pending").HasColumnName("status");
         entity.Property(e => e.RejectReason).HasColumnName("reject_reason");
-        entity.Property(e => e.AppliedAt).HasDefaultValueSql("(getdate())").HasColumnName("applied_at");
-        entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(getdate())").HasColumnName("updated_at");
+        entity.Property(e => e.AppliedAt).HasDefaultValueSql("(now())").HasColumnName("applied_at");
+        entity.Property(e => e.UpdatedAt).HasDefaultValueSql("(now())").HasColumnName("updated_at");
 
         entity.HasOne(d => d.User).WithMany(p => p.Applications)
             .HasForeignKey(d => d.UserId)
