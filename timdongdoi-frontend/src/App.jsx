@@ -20,8 +20,7 @@ import HomePage from "./pages/HomePage";
 import JobListPage from "./pages/jobs/JobListPage";
 import JobDetailPage from "./pages/jobs/JobDetailPage";
 import JobSearchPage from "./pages/jobs/JobSearchPage";
-// Sửa dòng này (đổi Search thành search)
-import CompanySearchPage from "./pages/company/Companysearchpage";
+import CompanySearchPage from "./pages/company/CompanySearchPage";
 import PublicCompanyPage from "./pages/company/PublicCompanyPage";
 import ProjectListPage from "./pages/projects/ProjectListPage";
 import ProjectDetailPage from "./pages/projects/ProjectDetailPage";
